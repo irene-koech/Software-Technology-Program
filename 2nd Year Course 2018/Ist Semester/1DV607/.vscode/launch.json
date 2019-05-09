@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.company.Main",
+            "args": "",
+            "projectName": "1dv510"
+        },
+        {
+            "type": "java",
+            "name": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "preLaunchTask": "build",
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${workspaceRoot}",
+            "startupClass": "my.package.Main",
+            "startupClassPathPattern": "src/main/java/",
+            "sourcePath": [
+                "${workspaceRoot}/src"
+            ],
+            "classpath": [
+                "${workspaceRoot}/bin"
+            ],
+            "options": []
+        }
+    ]
+}
