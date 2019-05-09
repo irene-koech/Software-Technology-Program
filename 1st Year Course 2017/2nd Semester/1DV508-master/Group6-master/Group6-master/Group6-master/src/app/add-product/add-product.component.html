@@ -1,0 +1,62 @@
+<html>
+        <mat-card *ngIf="isAdmin">
+                
+                 <div>
+                         <h1>Add new product</h1>
+                 </div>
+
+           <div class = "example-container padding">
+                <mat-form-field>
+                    <input matInput placeholder="Name" #name>
+                </mat-form-field>
+           </div>
+
+           <div class = "example-container padding">
+                <mat-form-field>
+                    <input matInput placeholder="Brand" #brand>
+                </mat-form-field> 
+           </div>
+           <div class = "example-container padding">
+                
+                        <mat-select placeholder="Category" [(value)]="category" #category1>
+                                <mat-option *ngFor="let category of categories | async" value="{{ category }}">{{ category }}</mat-option>
+                        </mat-select>
+                          
+
+           </div>
+          <div class="example-container padding">
+                
+            <mat-select placeholder="Color" [(value)]="color1" #color>
+                        <mat-option value="none">None</mat-option>
+                        <mat-option value="red">Red</mat-option>
+                        <mat-option value="blue">Blue</mat-option>
+                        <mat-option value="none">None</mat-option>
+                        <mat-option value="green">Green</mat-option>
+                        <mat-option value="yellow">Yellow</mat-option>
+                        <mat-option value="black">Black</mat-option>
+                </mat-select>
+        </div>
+          <div class="example-container padding">
+                <mat-form-field>
+                        <input matInput placeholder="Amount" type="number" class="example-right-align" #price>
+                        <!-- <span matPrefix>€&nbsp;</span> -->
+                        <span matSuffix>KR</span>
+                      </mat-form-field>
+
+                      
+          </div>
+
+          <div class = "example-container padding">
+                        <mat-form-field>
+                            <input matInput placeholder="Image URL (enter image URL)" #pictureURL>
+                        </mat-form-field> 
+
+                        <button mat-button class="my-button" (click)="addProduct(name.value, brand.value, category1.value, color.value, price.value, pictureURL.value)">Add</button>
+
+        </div>
+
+                
+           
+        </mat-card>
+    
+</html>

@@ -1,0 +1,47 @@
+
+
+
+h1{
+
+  text-align: center;
+}
+
+
+
+h2{
+  text-align: center;
+}
+
+
+
+a{
+  
+  color: #0c3644;
+}
+
+mat-form-field{
+  width:100%;
+}
+
+
+  
+.my-button{
+  width:100%;
+  color: #d8d44b;
+  background: none;
+}
+
+
+
+  .my-button:hover{
+    background-color: #33afa9;
+  }
+ .order{
+   clear:both;
+ }
+  .key{width:80%;
+    float:left;}
+  .status{
+    width:20%;
+    float:left;
+  }

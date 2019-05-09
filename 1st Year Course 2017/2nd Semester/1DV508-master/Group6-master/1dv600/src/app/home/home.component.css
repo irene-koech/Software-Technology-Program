@@ -1,0 +1,177 @@
+
+.searchFilter{
+  height:70px;
+}
+.searchFilter::after{
+  clear:both;
+}
+.product{
+width:96%;
+float:left;
+padding-right:4%;
+padding-bottom:8%;
+height:550px;
+}
+@media only screen and (min-width: 700px) {
+  .product{
+    width:46%;
+    }
+   
+}
+@media only screen and (min-width: 950px) {
+  .product{
+    width:29%;
+    }
+   
+}
+@media only screen and (min-width: 1350px) {
+  .product{
+    width:21%;
+    }
+   
+}
+#deal .product-name{
+  color:#D15C81;
+}
+
+.product-name {
+  
+  color:#31AFA9;
+  font-size: 1.5em;
+  
+  float:left;
+  width:100%;
+  height:150px;
+}
+a {
+  font-family: Open Sans, sans-serif;
+  text-decoration: none;
+  color: #0d3744;
+  font-size: 1em;
+}
+.description{
+  height:80px;
+  padding-top:20px;
+}
+.price {
+  font-size: 1.5em;
+  color: #d8d44b;
+  font-family: Oswald, sans-serif;
+  float:left;
+  align-content: center;
+  height:50px;
+  padding-left:10px;
+}
+#deal .price{
+  text-decoration: line-through;
+  margin-bottom:-20px;
+}
+#deal #new{
+  text-decoration:none;
+  
+  color:#D15C81;
+}
+img{  
+  width:auto;
+  max-width:100%;
+  padding:2%;
+  height:180px;
+}
+.stock{
+  float:left;
+  padding-top: none;
+  width: 150px;
+  height: 50px;
+ 
+}
+
+.add{
+  padding-top:80%;
+  width:100%;
+
+  height:auto;
+}
+.my-button {
+  
+  color: #d8d44b;
+ 
+  float: left;
+  width: 50px;
+}
+i{width:20px;
+  color: #d8d44b;
+}
+
+ .mat-form-field{
+   width: 30%;
+  float: left;
+} 
+
+.my-menu{
+  float: left;
+ background:none;
+margin-top:10px;
+width:auto;
+}
+.my-menu:hover{
+  background-color: #33afa9;
+}
+.my-menu a{
+  font-family: Oswald, sans-serif;
+}
+
+.my-menu-child:hover{
+    background-color: #33afa9;
+}
+.filter{
+  color: #d8d44b; 
+}
+
+.icon{
+  color: #d8d44b; 
+  
+}
+p{
+  padding:0;
+  margin:0;
+}
+#sign{
+  color: #33afa9;
+}
+
+fieldset, label { margin: 0; padding: 0; }
+body{ margin: 20px; }
+h1 { font-size: 1.5em; margin: 10px; }
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 3px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: rgb(96,96,96); 
+ float: right; 
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover, 
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } 
+
+.rating > input:checked + label:hover, 
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,  selection 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }

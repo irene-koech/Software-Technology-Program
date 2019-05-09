@@ -1,0 +1,60 @@
+.bgC1{
+    background-color: #33afa9;
+    height: 30px;
+    float: right;
+}
+
+.pad{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.bgC2{
+    
+    height: 120px;
+    
+}
+
+a{
+   
+    color: #d8d44b;    
+    
+    padding-left: 5px;
+}
+
+
+.cate{
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+}
+
+.test{
+    flex: 1 1 auto;
+}
+.my-menu{
+    background-color: #33afa9;
+    float: right;
+    font-size: 1.5em;
+    padding: 5px;
+}
+
+.my-menu-child:hover{
+    background-color: #33afa9;
+}
+
+.add{
+    padding-left:0;
+    margin-left:-10px;
+}
+
+.padding{
+    padding-right: 20px;
+}
+
+.icon{
+    margin-top:-10px;
+    float: right;
+    font-size: 2.5em;
+    color: #d8d44b;
+    margin-right: 20px;
+}

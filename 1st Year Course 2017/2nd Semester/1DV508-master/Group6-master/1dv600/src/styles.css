@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Oswald");
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+
+body{
+    padding-left:10%;
+    padding-right:10%;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: Oswald, sans-serif;
+    text-decoration: none;
+    color: #31AFA9;
+    text-transform: uppercase;
+}
+h2 {
+    color: #d8d44b;
+    font-size: 2em;
+
+  }
+  h1{
+      font-size:2em;
+      color:#31AFA9;
+  }
+  p {
+    font-family: Open Sans, sans-serif;
+    text-decoration: none;
+    color: #0d3744;
+    font-size: 1em;
+    
+  }
+
+
+a{
+    font-family: Oswald, sans-serif;
+    text-decoration: none;
+    color: #d8d44b;    
+    text-transform: uppercase;   
+    padding-right: 0;
+   
+  }
+  
+  a:hover {
+    font-family: Oswald, sans-serif;
+    text-decoration: none;
+    color: #d8d44b;    
+    text-transform: uppercase;   
+    
+  } 
+
+.my-button:hover{
+    background-color: #33afa9;
+  }
+  .my-button{
+    font-family: Oswald, sans-serif;
+    text-decoration: none;
+    color: #d8d44b;
+    background-color: #33afa9;
+    text-transform: uppercase;
+    width: 50px;
+    height: 40px;
+  }
+  .center {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin:auto;
+  }
+
+  @media screen and (min-width: 700px){
+    .center {
+      width: 45%;
+    
+    }
+  }
+  @media screen and (min-width: 1000px){
+    .center {
+      width: 35%;
+    
+    }
+  }

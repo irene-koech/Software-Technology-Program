@@ -1,0 +1,76 @@
+<html>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <mat-card class="left">
+        <h1>
+          out of stock
+        </h1>
+
+        <table >
+          <thead>
+            <tr>
+              <th> Product code</th>
+              <th>Category</th>
+              <th>Name</th>
+              <th>Brand</th>
+              <th>Color</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td>IF it has code we can delete the rest</td>
+            <td>test</td>
+            <td> test</td>
+            <td>test</td>
+            <td>test</td>
+          </tbody>
+          <tbody>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tbody>
+          <tbody>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tbody>
+          <tbody>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>testK</td>
+          </tbody>
+        </table>
+</mat-card> -->
+<body *ngIf="auth.isAdmin(user)">
+  <h1>
+    Orders
+  </h1>
+
+  <div>
+      <div class="key">
+        <h2>Order number</h2>
+      </div>
+      <div class="status">
+        <h2>Status</h2>
+      </div>
+      <div class="customer">
+          <h2>Customer details</h2>
+        </div>
+      <div class="order" *ngFor=" let order of orders | async">
+        <div (click)="selectOrder(order.key)" class="key"><p>{{ order.key }}</p></div>
+        <div class="status"><p>{{ order.status }}</p></div>
+        <div  (click)="selectUser(order.uid)" class="customer"><p>{{ order.uid }}</p></div>
+      </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

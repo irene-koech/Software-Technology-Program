@@ -1,0 +1,49 @@
+
+h1{
+
+    text-align: center;
+}
+  
+h2{
+  color: #33afa9;
+  font-size: 1em;
+  text-align: center;
+}
+
+
+a{
+  
+    color: #0c3644;
+}
+
+
+  .my-button:hover{
+    background-color: #33afa9;
+  }
+  .my-button{
+   background:none;
+    color: #d8d44b;
+    width:100%;
+  }
+  .social{
+    margin:auto;
+  }
+
+  .fbButton{
+    width: 50px;
+    color: 		#3b5998;
+  }
+  .tButton{
+    width: 50px;
+    color: #1dcaff;
+
+  }
+  .ghButton{
+    width: 50px;
+   
+   
+  }
+  .gButton{
+    width: 50px;
+    color: #4885ed;
+  }

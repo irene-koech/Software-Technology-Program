@@ -1,0 +1,59 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body>
+    <!--<mat-grid-list cols="4" rowHeight="650">
+            <mat-grid-tile *ngIf="isAdmin"><mat-card class="example-card" (click)="addProduct()">
+                <mat-card-content>
+                        <div><img mat-card-image src="http://ift.tt/1mQA8WT" alt="Photo of a Shiba Inu"></div>
+                </mat-card-content>
+            </mat-card></mat-grid-tile>
+            <mat-grid-tile *ngFor="let product of products | async"><mat-card class="example-card">
+                    <mat-card-title class="product-name">{{ product.name }}</mat-card-title>
+                    <img mat-card-image src= "{{product.pictureURL}}" width="200" height="300" alt="Photo">
+                    <mat-card-content>
+                        <a>{{ product.category }}</a>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button class="my-button" *ngIf="!isAdmin">
+                        <i class="material-icons">add_shopping_cart</i>
+                            ADD TO CART</button>
+                      <button mat-button class="my-button" *ngIf="isAdmin">
+                          <mat-icon>delete</mat-icon>
+                             Delete</button>
+                          <a>Price: {{ product.price }}</a>
+                    </mat-card-actions>
+                  </mat-card></mat-grid-tile>
+          </mat-grid-list>-->
+    
+    <div class="product" *ngIf="auth.isAdmin(user)" (click)="addProduct()">
+
+        <img mat-card-image src="http://ift.tt/1mQA8WT" class="add">
+
+    </div>
+
+    <div class="products" *ngFor="let product of products | async">
+        <div class="product">
+            <h2 class="product-name">{{ product.name }}</h2>
+            <img mat-card-image src="{{product.pictureURL}}" width="200" height="300" alt="Photo" (click)="selectProduct(product.key)">
+            <div class="description">
+                <a>{{ product.category }}</a><br>
+                <p *ngIf="product.avgStar">Average Rating: {{product.avgStar}}</p>
+
+                <img class="stock" *ngIf="!onStock(product.stock)" mat-card-image src="https://firebasestorage.googleapis.com/v0/b/groupsiiix.appspot.com/o/Logo%2Fout-of-stock.png?alt=media&token=fcc6edce-510a-4606-8397-d36b798fe012"
+                    alt="Photo">
+
+            </div>
+
+            <div *ngIf="onStock(product.stock)">
+                <button mat-button class="my-button" *ngIf="!auth.isAdmin(user)" (click)="addToCart(product)">
+                    <i class="material-icons">add_shopping_cart</i>
+                </button>
+                <a class="price">{{ product.price }} KR</a>
+            </div>
+            <!--   <button mat-button class="my-button" *ngIf="isAdmin">
+                        <mat-icon>delete</mat-icon>
+                        Delete</button> -->
+
+        </div>
+    </div>
+</body>

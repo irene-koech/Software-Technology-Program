@@ -1,0 +1,45 @@
+<html>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+<!-- Navbar  -->
+
+        <mat-toolbar class="bgC1"> 
+                <p align="left" class="pad" > <a *ngIf="isAdmin">Admin mode</a> </p>
+            <span class="test">  </span>
+
+            <p align="right" class="pad" >
+                <a [routerLink]="['/register']"  *ngIf="!isLoggedIn">Register</a>
+                <a [routerLink]="['/login']" *ngIf="!isLoggedIn">Login</a> 
+                <a [routerLink]="['/login']"  *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+            </p> 
+
+      </mat-toolbar>      
+
+      <mat-toolbar class="bgC2 pad"> 
+        <a [routerLink]="['/']">
+            <img src="https://firebasestorage.googleapis.com/v0/b/groupsiiix.appspot.com/o/Logo%2Flogo_grey-04.png?alt=media&token=96cff34f-24d0-418d-b81c-7313b4ef76a8"
+           width="150" alt="Mobile in case logo">
+          </a>   
+       <!-- <i class="material-icons" width="20" height="20">phone_iphone</i>-->
+
+       <!-- <a [routerLink]="['/']" class="name">mobile in case</a>-->
+        <span class="test"> </span>  
+            <button mat-button [matMenuTriggerFor]="menu" class="my-menu">
+            <a class="cate">Categories</a>
+              </button>
+              <mat-menu #menu="matMenu" overlapTrigger = "false" class="my-menu-child">
+                 <button mat-menu-item *ngFor="let category of categories | async" class="my-menu-child" (click)="changeCategory(category)">
+                        <a>{{ category }}</a>
+                </button>
+                <button mat-menu-item class="my-menu-child" (click)="addCategory()" *ngIf="isAdmin" >
+                    <mat-icon>add</mat-icon>
+                    <a>Add category</a>
+                </button>
+              </mat-menu>
+            
+    </mat-toolbar>    
+      
+
+
+</html>

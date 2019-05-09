@@ -1,0 +1,21 @@
+
+<fieldset class="rating" *ngIf="userId != 0">
+    
+  <ng-container  *ngFor="let num of [5, 4, 3, 2, 1]" >
+      
+      <!-- full star -->
+      <input 
+            (click)="starHandler(num); avgStarHandler();" 
+            [id]="'star'+num"
+            [value]="num-0.5"
+            name="rating" 
+            type="radio"
+             />
+
+            <label class="full" [for]="'star'+num" ></label>
+
+
+  </ng-container>
+   <p>You gave {{starValue}} stars.</p>
+   <p>Average rating: {{ avgRating | async}}</p>
+</fieldset>

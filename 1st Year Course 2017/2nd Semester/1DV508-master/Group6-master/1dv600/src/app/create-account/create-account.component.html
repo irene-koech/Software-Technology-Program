@@ -1,0 +1,29 @@
+<html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<div class="center">
+
+  <h1>Registration</h1>
+
+  <mat-form-field>
+    <!-- Email -->
+    <input matInput placeholder="Enter your email" required #email>
+
+
+  </mat-form-field>
+
+  <mat-form-field>
+    <!-- password -->
+    <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" #password>
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+
+  </mat-form-field>
+    <button mat-button mat-dialog-close class="my-button" (click)="registerEmail(email.value, password.value)">Create Account</button>
+
+</div>
+
+
+
+</html>

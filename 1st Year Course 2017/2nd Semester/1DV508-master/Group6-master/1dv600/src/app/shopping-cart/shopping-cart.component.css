@@ -1,0 +1,49 @@
+h2,h1{
+    float:left;
+}
+
+  .product-name{
+      clear:both;
+      float:left;
+      padding-bottom:0;
+      width:100%;
+      height:auto;
+  }
+  .price{
+      float:right;
+      height:auto;
+      width:20%;
+  }
+.quantity{
+    float:right;
+    height:auto;
+    width:20%;
+}
+.total{
+    clear:both;
+    float:right;
+    height:auto;
+    
+}
+.my-button {
+    clear:both;
+    float:right;
+    
+   
+    color: #d8d44b;
+  
+   
+    margin-bottom:3em;
+  }
+  a{
+    font-family: Oswald, sans-serif;
+    text-decoration: none;
+    color: #d8d44b;    
+    text-transform: uppercase;   
+   font-size:1.5em;
+  }
+  mat-form-field{
+      width:40px;
+      float:right;
+      padding-top:3px;
+  }

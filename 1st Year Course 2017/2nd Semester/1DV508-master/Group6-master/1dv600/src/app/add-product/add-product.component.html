@@ -1,0 +1,50 @@
+<html>
+
+
+<div class="center" *ngIf="auth.isAdmin(user)">
+        <h1>Add new product</h1>
+
+        <mat-form-field>
+                <input matInput placeholder="Name" #name>
+        </mat-form-field>
+
+        <mat-form-field>
+                <input matInput placeholder="Brand" #brand>
+        </mat-form-field>
+
+        <mat-select placeholder="Category" [(value)]="category" #category1>
+                <mat-option *ngFor="let category of categories | async" value="{{ category }}">{{ category }}</mat-option>
+        </mat-select>
+
+
+
+        <mat-select placeholder="Color" [(value)]="color1" #color>
+                <mat-option value="none">None</mat-option>
+                <mat-option value="red">Red</mat-option>
+                <mat-option value="blue">Blue</mat-option>
+                <mat-option value="green">Green</mat-option>
+                <mat-option value="yellow">Yellow</mat-option>
+                <mat-option value="pink">Pink</mat-option>
+                <mat-option value="black">Black</mat-option>
+                <mat-option value="white">White</mat-option>
+        </mat-select>
+        <mat-form-field>
+                <input matInput placeholder="Amount" type="number" class="example-right-align" #price>
+                <!-- <span matPrefix>€&nbsp;</span> -->
+                <span matSuffix>KR</span>
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder="Stock" type="number" class="example-right-align" #stock>
+                <!-- <span matPrefix>€&nbsp;</span> -->
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder="Image URL (enter image URL)" type="text" #pictureURL>
+        </mat-form-field>
+
+        <button mat-button class="my-button" (click)="addProduct(name.value, brand.value, category1.value, color.value, price.value, stock.value, pictureURL.value)">Add</button>
+
+</div>
+
+
+
+</html>

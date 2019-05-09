@@ -1,0 +1,25 @@
+
+
+
+h1{
+   
+  text-align: center;
+}
+
+
+
+
+  
+.my-button{
+  width:100%;
+  color: #d8d44b;
+  background: none;
+}
+
+
+
+  .my-button:hover{
+    background-color: #33afa9;
+  }
+  
+  

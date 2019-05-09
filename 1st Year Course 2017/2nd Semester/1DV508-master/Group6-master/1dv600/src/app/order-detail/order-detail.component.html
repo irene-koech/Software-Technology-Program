@@ -1,0 +1,30 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body *ngIf="order">
+
+  <div>
+    <h1>Order Detail</h1>
+    <p>ID: {{ order.key }}</p>
+    <!-- <p>User ID: {{ order.uid }}</p> -->
+  
+    <mat-select *ngIf="auth.isAdmin(user)" placeholder="Status"  [(ngModel)]="order.status" >
+       <mat-option value="New">New</mat-option>
+        <mat-option value="Delayed">Delayed</mat-option>
+        <mat-option value="Shipped">Shipped</mat-option>
+    </mat-select>
+  
+
+  <div class="products" *ngFor="let product of order.products">
+    <div class="product" >
+        <h2 class="product-name">{{ product.name }}</h2>
+        <p class="quantity">{{ product.stock }}</p>
+    </div>
+  </div>
+  
+  <button mat-button class="my-button" *ngIf="auth.isAdmin(user)">
+      <a *ngIf="auth.isAdmin(user)" (click)="editStatus(order.status)">save</a>
+  </button>
+ </div>
+
+</body>
+

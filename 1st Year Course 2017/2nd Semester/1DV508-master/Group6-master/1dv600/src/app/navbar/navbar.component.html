@@ -1,0 +1,67 @@
+<html>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Navbar  -->
+
+        <mat-toolbar class="bgC1 pad"> 
+               <a *ngIf="auth.isAdmin(user)">Admin mode</a>
+            <span class="test">  </span>
+            <button mat-icon-button class="icon" *ngIf="!auth.isAdmin(user)&&user"> 
+                <span (click)="showProfile()" class="material-icons">account_box</span>
+            </button>
+            <div>
+                <a (click)="registerPopup()" *ngIf="!user">Register</a>
+                <a (click)="loginPopup()" *ngIf="!user">Login</a> 
+
+               
+                <a (click)="showOrderList()" *ngIf="auth.isAdmin(user)">Orders</a>
+                <a [routerLink]="['']"  *ngIf="user" (click)="logout()">Logout</a>
+            </div> 
+
+      </mat-toolbar>    
+      <mat-toolbar class="bgC2 pad"> 
+        <a [routerLink]="['/']">
+            <img src="https://firebasestorage.googleapis.com/v0/b/groupsiiix.appspot.com/o/Logo%2Flogo_grey-04.png?alt=media&token=96cff34f-24d0-418d-b81c-7313b4ef76a8"
+           width="150" alt="Mobile in case logo">
+          </a>   
+       
+       <!-- <span class="test"> </span> 
+            <i class="fa fa-shopping-cart" (click)="showCart()">{{(shoppingCartItems$ | async).length}}</i>  -->
+       
+                               <!-- shoping cart empty -->
+         
+        <span class="test"> </span>  
+        <div >
+          
+            <button mat-icon-button class="icon" *ngIf="!auth.isAdmin(user)&&(shoppingCartItems$| async).length == 0" (click)="showCart()">
+                <span class="material-icons">add_shopping_cart</span>
+        
+            </button> 
+                           <!-- shoping cart with product inside -->
+            <button mat-icon-button class="icon" *ngIf="!auth.isAdmin(user)&&(shoppingCartItems$| async).length > 0" (click)="showCart()">  <!-- change to "icon" --> 
+                    <span class="material-icons">shopping_cart</span>
+                </button> 
+
+                
+        </div>
+            <button mat-button [matMenuTriggerFor]="menu" class="my-menu">
+                
+            <a class="cate">Categories</a>
+              </button>
+              <mat-menu #menu="matMenu" overlapTrigger = "false" class="my-menu-child">
+                 <button mat-menu-item *ngFor="let category of categories | async" class="my-menu-child" (click)="changeCategory(category)">
+                        <a>{{ category }}</a>
+                </button>
+                
+                <button mat-menu-item class="my-menu-child" (click)="addCategory()" *ngIf="auth.isAdmin(user)">
+                    <mat-icon>add</mat-icon>
+                    <a class="add">Add category</a>
+                </button>
+              </mat-menu>
+             
+        
+    </mat-toolbar>
+
+</html>

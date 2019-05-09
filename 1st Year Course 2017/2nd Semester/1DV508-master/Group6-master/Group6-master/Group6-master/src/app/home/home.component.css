@@ -1,0 +1,58 @@
+.example-card {
+  max-width: 400px;
+  height: 520px;
+}
+
+a {
+  font-family: Open Sans, sans-serif;
+  text-decoration: none;
+  color: #0d3744;
+  font-size: 1.5em;
+  padding: 10px;
+  padding-left:0;
+}
+.price {
+  font-size: 2em;
+}
+.my-button {
+  font-family: Oswald, sans-serif;
+  text-decoration: none;
+  color: #d8d44b;
+  text-transform: uppercase;
+  background-color: #33afa9;
+  float: left;
+  width: 40%;
+ 
+}
+
+.product-name {
+  font-family: Oswald, sans-serif;
+  text-decoration: none;
+  color:#31AFA9;
+  font-size: 2em;
+  padding: 10px;
+  padding-left:0;
+  text-transform: uppercase;
+}
+
+.add-icon {
+  font-size: 10em;
+}
+
+.add {
+  padding-top: 180px;  
+}
+
+body {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+img {
+  float: left;
+  width: 100%;
+  height: auto;
+}
+div {
+  float: left;
+  padding-left:10px;
+}

@@ -1,0 +1,15 @@
+
+
+.my-button{
+  color: #d8d44b;
+  width:100%;
+  background:none;
+}
+.my-button:hover{
+  background-color:#33afa9;
+}
+a{
+  
+    color: #0C3644;
+}
+

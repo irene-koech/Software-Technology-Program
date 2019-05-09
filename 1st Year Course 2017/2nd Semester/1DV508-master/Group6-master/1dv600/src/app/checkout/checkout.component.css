@@ -1,0 +1,31 @@
+
+
+
+
+h2{clear:both;}
+  .my-button {
+    clear:both;
+    color: #d8d44b;
+    float: right;
+    width: 100px;
+  }
+
+  .order{
+    clear:both;
+  }
+   .key{width:60%;
+     float:left;}
+   .quantity{
+     width:25%;
+     float:left;
+   }
+   .price{
+     float:left;
+     width:15%;
+   }
+   mat-form-field{
+    width:100%;
+  }
+  .total{
+    clear:both; float:right;
+  }

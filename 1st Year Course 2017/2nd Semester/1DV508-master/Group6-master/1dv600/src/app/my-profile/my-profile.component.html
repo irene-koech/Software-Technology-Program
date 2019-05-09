@@ -1,0 +1,104 @@
+<html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="center">
+  <h1 *ngIf="hasAddress">Welcome {{userAddress.name}}</h1>
+  <h1 *ngIf="!hasAddress">Welcome, stranger</h1>
+  <h2> Contact details</h2>
+
+  <!-- If user has an address set -->
+  <div *ngIf="userAddress">
+
+    <mat-form-field>
+      <input matInput placeholder="Full name" #name value="{{userAddress.name}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="E-mail" #email value="{{userEmail}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Address" #address value="{{userAddress.address}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Zip code" #zip value="{{userAddress.zip}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="City" #city value="{{userAddress.city}}">
+    </mat-form-field>
+
+    <button mat-button class="my-button" (click)="setAddress(name.value, address.value, zip.value, city.value, email.value)">Update your details</button>
+
+
+  </div>
+
+  <!-- If user doesn't have an address set -->
+  <div *ngIf="!userAddress">
+
+    <mat-form-field>
+      <input matInput placeholder="Full name" #name value="">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="E-mail" #email value="{{userEmail}}">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Address" #address value="">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Zip code" #zip value="">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="City" #city value="">
+    </mat-form-field>
+
+    <button mat-button class="my-button" (click)="setAddress(name.value, address.value, zip.value, city.value, email.value)">Update your details</button>
+
+
+  </div>
+
+  <!--<div>
+    <h2> My order list</h2>
+  </div>
+  <div class="center" *ngIf="orders">
+    <table>
+      <thead>
+        <tr>
+          <th>Order number</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody *ngFor=" let order of orders">
+        <td>{{ order.key }}</td>
+        <td>{{ order.status }}</td>
+      </tbody>
+
+
+    </table>
+  </div>-->
+  <div *ngIf="orders">
+    <h2> My order list</h2>
+
+    <div>
+      <div class="key">
+        <h3>Order number</h3>
+      </div>
+      <div class="status">
+        <h3>Status</h3>
+      </div>
+      <div class="order" *ngFor=" let order of orders">
+        <div class="key" (click)="selectOrder(order.key)" ><p>{{ order.key }}</p></div>
+        <div class="status"><p>{{ order.status }}</p></div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+</html>

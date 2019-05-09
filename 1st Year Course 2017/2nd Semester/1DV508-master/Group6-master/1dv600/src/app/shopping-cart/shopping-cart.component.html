@@ -1,0 +1,29 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body>
+  <h1>My shopping cart</h1>
+  <div class="products" *ngFor="let product of shoppingCartItems ">
+    <div class="product">
+      <div class="product-name">
+        <h2>{{product.name}}</h2>
+      </div>
+      <div class="quantity">
+        <mat-form-field>
+          <input matInput  type="number" min="0" value="{{product.stock}}" [(ngModel)]="product.stock" (click)="countTotal()">
+        </mat-form-field>
+      </div>
+      <div class="price">
+        <h3>{{product.price}} KR</h3>
+      </div>
+     
+    </div>
+  </div>
+  <h2 class="total">Total: {{totalPrice}} KR</h2>
+<!--   <button mat-button class="my-button" (click)="countTotal()">
+      <a>save</a>
+    </button> -->
+  <button mat-button class="my-button" (click)="openDialog()">
+    <a>next</a>
+  </button>
+</body>
+

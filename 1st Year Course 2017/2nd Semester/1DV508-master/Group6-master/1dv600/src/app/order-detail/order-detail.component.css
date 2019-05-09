@@ -1,0 +1,37 @@
+h2 {
+  float: left;
+}
+
+.product-name {
+  clear: both;
+  float: left;
+  padding-bottom: 0;
+}
+.price {
+  float: left;
+}
+.quantity {
+  float: right;
+  padding-top: 1.5em;
+}
+
+.my-button {
+  clear: both;
+  float: right;
+  color: #d8d44b;
+  margin-bottom: 3em;
+}
+a {
+  color: #d8d44b;
+  font-size: 2em;
+}
+p{
+    float:left;
+    padding-left:0;
+    padding-top:0;
+}
+mat-select {
+   float:right;
+  width: 100px;
+  padding-top:1em;
+}

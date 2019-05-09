@@ -1,0 +1,64 @@
+<html>
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body>
+  <div *ngIf="product">
+
+    <img src="{{product.pictureURL}}" alt="" />
+
+    <div class="details">
+        <div id="deal" *ngIf="product.saleStatus">
+
+        <h1>{{product.name}}</h1>
+      </div>
+      <div  *ngIf="!product.saleStatus">
+
+        <h1>{{product.name}}</h1>
+      </div>
+      <p>Brand: {{product.brand}}</p>
+      <p>Category: {{product.category}}</p>
+
+      <p>Color: {{product.color}}</p>
+      <p id="sign" *ngIf="product.saleStatus">DEAL OF THE DAY!</p>
+      <p *ngIf="auth.isAdmin(user)&&onStock(product.stock)">Stock: {{product.stock}}</p>
+      <img class="stock" *ngIf="!onStock(product.stock)" src="https://firebasestorage.googleapis.com/v0/b/groupsiiix.appspot.com/o/Logo%2Fout-of-stock.png?alt=media&token=fcc6edce-510a-4606-8397-d36b798fe012"
+        alt="out of stock">
+      <app-star></app-star>
+
+      <div id="deal" *ngIf="product.saleStatus">
+        <h2 class="price">Price: {{ product.price }} KR</h2>
+        <h2 class="price" id="new">Price: {{ product.salePrice }} KR</h2>
+      </div>
+      <div *ngIf="!product.saleStatus">
+        <h2 class="price">Price: {{ product.price }} KR</h2>
+      </div>
+      <button mat-button class="my-button" *ngIf="!auth.isAdmin(user)" (click)="addToCart(product)">
+        <i class="material-icons">add_shopping_cart</i>
+      </button>
+
+      <button mat-raised-button class="my-menu my-button" [matMenuTriggerFor]="menu" *ngIf="auth.isAdmin(user)">
+        <a>Product management</a>
+      </button>
+
+      <mat-menu #menu="matMenu" overlapTrigger="false">
+        <button mat-menu-item class="menu-item">
+          <mat-icon> add </mat-icon>
+          <a (click)="editProduct()"> Edit product</a>
+        </button>
+        <button mat-menu-item class="menu-item" (click)="deleteProduct()">
+          <mat-icon>delete</mat-icon>
+          <a> Delete product</a>
+        </button>
+      </mat-menu>
+
+
+
+
+
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+.example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+  
+
+mat-card {
+    max-width: 40%;
+    margin: 2em auto;
+    /* text-align: center; */
+  }
+
+h1{
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+  color: #33afa9;
+  font-size: 2em;
+  text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+
+.container > * {
+    width: 50%;
+  }
+
+
+a{
+    font-family: Oswald, sans-serif;
+    color: #33afa9;
+    
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+
+  @media screen and (max-width: 1000px){
+    .example-container {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+    }
+  } 
+  
+.my-input:active{
+    color: #33afa9;
+    width: 300px;
+  }
+.my-button:hover{
+    background-color: #33afa9;
+  }
+  
+.my-button{
+    font-family: Oswald, sans-serif;
+    text-decoration: none;
+    color: #d8d44b;
+    text-transform: uppercase;
+    }
+
+.padding{ /* to make the h1 and the form nice */
+  padding: 8px;
+}
+
+div{
+  margin: auto;
+}

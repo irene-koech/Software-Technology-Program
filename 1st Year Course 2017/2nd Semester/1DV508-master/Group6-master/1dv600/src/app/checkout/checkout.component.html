@@ -1,0 +1,102 @@
+<html>
+
+
+<body>
+  <h1>My order</h1>
+<h2>Products</h2>
+  <div>
+    <div class="key">
+      <h3>Product's name</h3>
+    </div>
+    <div class="quantity">
+      <h3>Quantity</h3>
+    </div>
+    <div class="price">
+      <h3>Price</h3>
+    </div>
+    <div class="order" *ngFor="let product of shoppingCartItems">
+      <div class="key">
+        <p>{{ product.name }}</p>
+      </div>
+      <div class="quantity">
+        <p>{{product.stock }}</p>
+      </div>
+      <div class="price">
+        <p>{{ product.price }} KR</p>
+      </div>
+    </div>
+
+
+  </div>
+  <h3 class="total">Total: {{totalPrice}} KR</h3>
+
+  <div>
+    <h2>Address</h2>
+  </div>
+
+  <!-- When address field already exists in database -->
+  <div *ngIf="hasAddress">
+    <mat-form-field>
+      <input matInput required placeholder="Full name" value="{{userAddress.name}}" #name>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput required placeholder="Address" value="{{userAddress.address}}" #address>
+      <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
+      <div *ngIf="address.errors.required">phoneNumber is required</div>  
+    </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput required placeholder="Zip code" value="{{userAddress.zip}}" #zip>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput required placeholder="City" value="{{userAddress.city}}" #city>
+    </mat-form-field>
+
+    <mat-checkbox><p>Save my address</p></mat-checkbox>
+
+    <button mat-button class="my-button" (click)="setAddress(name.value, address.value, zip.value, city.value); addOrder(); stockChange()">order</button>
+
+
+  </div>
+
+  <!-- When no address field exists in database -->
+  <div *ngIf="!hasAddress">
+
+    <mat-form-field>
+      <input matInput required  placeholder="Full name" value="" #nameNew>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <input matInput required  placeholder="Address" value="" #addressNew>
+      <div class="alert alert-danger" *ngIf="addressNew.touched && !addressNew.valid">
+      <div *ngIf="address.errors.required">phoneNumber is required</div>  
+    </div>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <input matInput required placeholder="Zip code" value="" #zipNew>
+    </mat-form-field>
+
+
+
+    <mat-form-field>
+      <input matInput required placeholder="City" value="" #cityNew>
+    </mat-form-field>
+
+    <mat-checkbox>Save my address</mat-checkbox>
+
+    <button mat-button mat-dialog-close class="my-button" (click)="setAddress(nameNew.value, addressNew.value, zipNew.value, cityNew.value); addOrder();stockChange()">order</button>
+
+
+  </div>
+</body>
+
+</html>

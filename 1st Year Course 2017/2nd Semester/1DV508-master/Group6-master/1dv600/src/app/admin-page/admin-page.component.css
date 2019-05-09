@@ -1,0 +1,24 @@
+
+/*
+table {
+    border-collapse: collapse;
+    float: center;
+    width: 100%;
+  }
+td {
+  text-align: center;
+}*/
+
+.order{
+  clear:both;
+}
+ .key{width:40%;
+   float:left;}
+ .status{
+   width:20%;
+   float:left;
+ }
+ .customer{
+   float:left;
+   width:40%;
+ }

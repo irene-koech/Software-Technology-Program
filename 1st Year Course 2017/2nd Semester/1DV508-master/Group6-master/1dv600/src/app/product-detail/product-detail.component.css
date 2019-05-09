@@ -1,0 +1,64 @@
+#deal h1{
+  color:#D15C81;
+}
+img {
+  width: 100%;
+  height: auto;
+  padding-top:20px;
+}
+.details {
+  float: left;
+  width: 100%;
+}
+@media screen and (min-width: 700px) {
+  img {
+    width: 50%;
+    float:left;
+
+  margin-left:-5%;
+  padding-right:5%;
+  }
+  .details {
+    float: left;
+    width: 50%;
+  }
+}
+.stock {
+  clear:both;
+  width:auto;
+  height:80px;
+  padding-top:0;
+}
+.stock::after{
+  clear:both;
+}
+
+.price {
+  clear:both;
+  float: right;
+  align-content: center;
+}
+#deal .price{
+  text-decoration: line-through;
+  margin-bottom:-20px;
+}
+#deal #new{
+  text-decoration:none;
+  
+  color:#D15C81;
+  margin-bottom:10px;
+}
+.my-button {
+  clear:both;
+  color: #d8d44b;
+  float: right;
+  width: 100px;
+}
+.my-menu{
+  width:70%;
+}
+#sign{
+  color: #33afa9;
+  font-size:1.5em;
+  margin-top:0;
+}

@@ -1,0 +1,58 @@
+<html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<mat-card>-->
+
+<div class="center">
+    <h1>Login with Email </h1>
+
+
+    <mat-form-field>
+        <!-- Email -->
+        <input matInput placeholder="Email" required #email>
+    </mat-form-field>
+
+
+    <mat-form-field>
+        <!-- password -->
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" #password>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+
+    </mat-form-field>
+
+    <button mat-button mat-dialog-close class="my-button" (click)="loginEmail(email.value, password.value)">Login</button>
+    <button mat-button mat-dialog-close class="my-button" (click)="resetPassword(email.value)">Forgot your password?</button>
+    <button mat-button mat-dialog-close class="my-button" (click)="registerPopup()">Don't have an account?</button>
+
+
+
+    <div class="social">
+        <h2>Or</h2>
+
+        <!-- login facebook -->
+        <button class="fbButton" mat-dialog-close (click)="loginfb()">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+        </button>
+
+        <!-- login twitter -->
+        <button class="tButton" mat-dialog-close (click)="loginTwitter()">
+            <i class="fa fa-twitter"></i>
+        </button>
+
+        <!-- login google -->
+        <button class="gButton" mat-dialog-close (click)="loginGoogle()">
+            <i class="fa fa-google" aria-hidden="true"></i>
+        </button>
+
+        <!-- login github -->
+        <button class="ghButton" mat-dialog-close (click)="loginGitHub()">
+            <i class="fa fa-github" aria-hidden="true"></i>
+        </button>
+    </div>
+
+</div>
+
+
+<!--</mat-card>    -->
+
+</html>

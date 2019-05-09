@@ -1,0 +1,85 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body>
+    <div class="searchFilter">
+        <mat-form-field>
+
+            <input matInput type="text" [(ngModel)]="term" placeholder="Search.." class="input">
+        </mat-form-field>
+
+        <fieldset class="rating">
+            <p id="sign">Sort by average rating:</p>
+                <ng-container  *ngFor="let num of [5, 4, 3, 2, 1]" >
+                    
+                    <!-- full star -->
+                    <input 
+                          (click)="starHandler(num)" 
+                          [id]="'star'+num"
+                          [value]="num-0.5"
+                          name="rating" 
+                          type="radio"
+                           />
+              
+                          <label class="full" [for]="'star'+num" ></label>
+              
+              
+                </ng-container>
+              </fieldset>
+    </div>
+
+    <div class="product" *ngIf="auth.isAdmin(user)" (click)="addProduct()">
+        <img mat-card-image src="http://ift.tt/1mQA8WT" class="add">
+    </div>
+
+    <div *ngIf="saleProducts">
+        <div class="deals" *ngFor="let saleProduct of saleProducts | filter:term | starFilter:starValue">
+
+            <div class="product" id="deal">
+                <h2 class="product-name">{{ saleProduct.name }}</h2>
+                <img mat-card-image src="{{saleProduct.pictureURL}}" width="200" height="300" alt="Photo" (click)="selectProduct(saleProduct.key)">
+                <div class="description">
+                    <a>{{ saleProduct.category }}</a>
+                    <br>
+                  <p *ngIf="saleProduct.avgStar">Average Rating: {{saleProduct.avgStar}}</p>
+<p id="sign">DEAL OF THE DAY!</p>
+                    <img class="stock" *ngIf="!onStock(saleProduct.stock)" mat-card-image src="https://firebasestorage.googleapis.com/v0/b/groupsiiix.appspot.com/o/Logo%2Fout-of-stock.png?alt=media&token=fcc6edce-510a-4606-8397-d36b798fe012"
+                        alt="Photo">
+                </div>
+
+                <div *ngIf="onStock(saleProduct.stock)">
+                    <button mat-button class="my-button" *ngIf="!auth.isAdmin(user)" (click)="addToCart(saleProduct)">
+                        <i class="material-icons">add_shopping_cart</i>
+                    </button>
+                    <a class="price">{{ saleProduct.price }} KR</a>
+                    <a class="price" id="new">{{saleProduct.salePrice}} KR</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="products">
+        <div class="products" *ngFor="let product of products | filter:term | starFilter:starValue">
+            <div class="product">
+                <h2 class="product-name">{{ product.name }}</h2>
+                <img mat-card-image src="{{product.pictureURL}}" width="200" height="300" alt="Photo" (click)="selectProduct(product.key)">
+                <div class="description">
+                    <a>{{ product.category }}</a>
+                    <br>
+                    
+                    <p *ngIf="product.avgStar">Average Rating: {{product.avgStar}}</p>
+                    <img class="stock" *ngIf="!onStock(product.stock)" mat-card-image src="https://firebasestorage.googleapis.com/v0/b/groupsiiix.appspot.com/o/Logo%2Fout-of-stock.png?alt=media&token=fcc6edce-510a-4606-8397-d36b798fe012"
+                        alt="Photo">
+                </div>
+
+                <div *ngIf="onStock(product.stock)">
+                    <button mat-button class="my-button" *ngIf="!auth.isAdmin(user)" (click)="addToCart(product)">
+                        <i class="material-icons">add_shopping_cart</i>
+                    </button>
+                    <a class="price">{{ product.price }} KR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

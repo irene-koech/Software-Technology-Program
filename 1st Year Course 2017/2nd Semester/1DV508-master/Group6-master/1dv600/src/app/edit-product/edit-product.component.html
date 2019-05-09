@@ -1,0 +1,66 @@
+<html>
+<div class="center" *ngIf="product">
+
+
+        <h1>Edit product</h1>
+
+
+
+        <mat-form-field>
+                <input matInput placeholder="Name" #name value="{{product.name}}">
+        </mat-form-field>
+
+        <mat-form-field>
+                <input matInput placeholder="Brand" #brand value="{{product.brand}}">
+        </mat-form-field>
+
+
+        <mat-select placeholder="Category" [(value)]="product.category" #category1>
+                <mat-option *ngFor="let category of categories | async" value="{{ category }}">{{ category }}</mat-option>
+        </mat-select>
+
+
+
+
+        <mat-select placeholder="Color" [(value)]="product.color" #color>
+                <mat-option value="none">None</mat-option>
+                <mat-option value="red">Red</mat-option>
+                <mat-option value="blue">Blue</mat-option>
+                <mat-option value="green">Green</mat-option>
+                <mat-option value="yellow">Yellow</mat-option>
+                <mat-option value="black">Black</mat-option>
+        </mat-select>
+
+
+        <mat-form-field>
+                <input matInput placeholder="Amount" type="number" #price value="{{product.price}}">
+               
+                <span matSuffix>KR</span>
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="saleStatus">Deal of the day</mat-checkbox>
+        <mat-form-field>
+                <input matInput placeholder="New Price" type="number" #salePrice value="{{product.salePrice}}">
+
+                <span matSuffix>KR</span>
+        </mat-form-field>
+
+
+        <mat-form-field>
+                <input matInput placeholder="Stock" type="number" #stock value="{{product.stock}}">
+                
+        </mat-form-field>
+
+
+        <mat-form-field>
+                <input matInput placeholder="Image URL (enter image URL)" type="text" #pictureURL value="{{product.pictureURL}}">
+        </mat-form-field>
+
+        <button mat-button class="my-button" (click)="editProduct(name.value, brand.value, category1.value, color.value, price.value, stock.value, pictureURL.value, salePrice.value)">Save</button>
+
+</div>
+
+
+
+
+
+</html>
